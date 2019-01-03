@@ -15,3 +15,17 @@ export const fetchUser = async () => {
     return errorResponse;
   }
 };
+
+export const fetchUsers = async () => {
+  try {
+    const response = await fetch(`${config.API_URL}?results=15`);
+    if (response.status === 200) {
+      const responseJson = await response.json();
+      const { results } = responseJson; 
+      return { success: true, payload: results };
+    } 
+    return errorResponse;
+  } catch (error) {
+    return errorResponse;
+  }
+};
