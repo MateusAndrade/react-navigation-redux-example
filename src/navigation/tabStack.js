@@ -17,10 +17,10 @@ const tabNavigatorContainer = {
 
       switch (routeName) {
         case 'Contacts':
-          iconName = 'account';
+          iconName = 'account-multiple';
           break;
         case 'UserInfo':
-          iconName = 'account-multiple';
+          iconName = 'account';
           break;
         default:
           iconName = 'account';
@@ -33,19 +33,19 @@ const tabNavigatorContainer = {
     },
   }),
   tabBarOptions: {
-    activeTintColor: 'red',
-    inactiveTintColor: 'blue',
+    activeTintColor: '#1976d2',
+    inactiveTintColor: '#64b5f6',
     showLabel: false,
   },
 };
 
 /* Create your tabBottom with the 'stacks' to each tab */
 const tabNavigator = createBottomTabNavigator({
-  [routes.Contacts]: {
-    screen: contactsStack,
-  },
   [routes.UserInfo]: {
     screen: userStack,
+  },
+  [routes.Contacts]: {
+    screen: contactsStack,
   },
 }, tabNavigatorContainer);
 
