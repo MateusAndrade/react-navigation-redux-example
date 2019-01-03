@@ -1,4 +1,4 @@
 export default {
-  MyContacts:  'MyContacts',
+  Contacts:  'Contacts',
   UserInfo: 'UserInfo',
 };
