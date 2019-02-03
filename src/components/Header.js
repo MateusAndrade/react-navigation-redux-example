@@ -18,7 +18,6 @@ export const HeaderHome = ({ userInfo, title }) => (
 
 export const HeaderContainer = connect(mapStateToProps, null)(HeaderHome);
 
-
 const stylesHome = StyleSheet.create({
   container: {
     alignItems: 'flex-start',

@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isFetching: false,
-  userInfo: {},
+  userInfo: { name: { first: '' } }, //fix para nao crashar quando iniciar
   error: null,
 };
 
