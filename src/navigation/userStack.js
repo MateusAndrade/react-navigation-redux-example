@@ -5,7 +5,7 @@ import routes from './routes';
 
 import UserContainer from '../containers/UserContainer';
 
-import { HeaderHome } from '../components/Header';
+import { HeaderContainer as HeaderHome } from '../components/Header';
 
 const userContainer = {
   initialRouteName: routes.UserInfo,
@@ -17,7 +17,7 @@ const userStack = createStackNavigator({
   [routes.UserInfo]: {
     screen: UserContainer,
     navigationOptions: ({ navigation }) => ({
-      header: <HeaderHome title="Welcome!" />,
+      header: <HeaderHome title="Welcome" />,
     }),
   },
 }, userContainer);
