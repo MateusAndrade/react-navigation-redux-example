@@ -18,7 +18,10 @@ const Contact = props => {
     <TouchableOpacity onPress={() => onSelect(userInfo)} style={[styles.container, styles.row,  styles.center]}>
       <View style={[styles.center, styles.row]}>
         <Avatar rounded height={50} width={50} source={{ uri: userInfo.picture.large }} />
-        <Text style={styles.userName}>{fullUserName}</Text>
+        <View style={[styles.column, styles.userInfoContainer]}>
+          <Text style={styles.userName}>{fullUserName}</Text>
+          <Text style={styles.userEmail}>{userInfo.email}</Text>
+        </View>
       </View>
       <View style={[styles.iconContainer, styles.center]}>
         <Icon name="chevron-right" size={25} color="#1976D2" />
@@ -36,21 +39,26 @@ const styles = StyleSheet.create({
   center: {
     alignItems: 'center',
   },
+  column : {
+    flexDirection: 'column',
+  },
   container: {
     justifyContent: 'space-between',
     width: '100%',
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
-  iconContainer: {
-
-  },
   row: {
     flexDirection: 'row',
+  },
+  userEmail: {
+    fontSize: 10,
   },
   userName: {
     fontWeight: 'bold',
     fontSize: 15,
+  },
+  userInfoContainer: {
     marginLeft: 15,
   },
 });
