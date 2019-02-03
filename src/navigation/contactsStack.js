@@ -7,7 +7,7 @@ import routes from './routes';
 import ContactsContainer from '../containers/ContactsContainer';
 import ContactDetailsContainer from '../containers/ContactDetailsContainer';
 
-import { HeaderContainer as HeaderHome } from '../components/Header';
+import { HeaderContainer as HeaderHome, Header } from '../components/Header';
 
 const contactsContainer = {
   initialRouteName: routes.Contacts,
@@ -25,9 +25,20 @@ const contactsStack = createStackNavigator({
   [routes.ContactDetails]: {
     screen: ContactDetailsContainer,
     navigationOptions: ({ navigation }) => ({
-      header: <HeaderHome navigation={navigation} title="Your contacts" />,
+      header: <Header navigation={navigation} title="Contact Info" />,
     }),
   },
 }, contactsContainer);
+
+contactsStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
 
 export default contactsStack;

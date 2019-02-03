@@ -21,7 +21,7 @@ class Contacts extends Component {
   }
 
   toContactDetail = contactInfo => {
-    NavigationService.navigate(routes.ContactDetails, contactInfo)
+    NavigationService.navigate(routes.ContactDetails, { contactInfo })
   }
 
   render() {

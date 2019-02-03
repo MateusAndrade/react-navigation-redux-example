@@ -14,7 +14,7 @@ import coutryList from '../config/countrys';
 /***
  * Render a simple line with a label and a title
  */
-const UserInfoRow = ({ label, title }) => (
+export const UserInfoRow = ({ label, title }) => (
   <View style={styles.row}>
     <Text style={styles.titleUserInfo}>{title}</Text>
     <Text>{label}</Text>
@@ -24,7 +24,7 @@ const UserInfoRow = ({ label, title }) => (
 /***
  * Render a simple line with a icon with a title
  */
-const HeaderRow = ({ title, icon }) => (
+export const HeaderRow = ({ title, icon }) => (
   <View style={[styles.row, styles.headerRow, styles.center]}>
     <Icon name={icon} size={25} color="#1976D2" />
     <Text style={styles.headerRowTitle}>{title}</Text>

@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { capitalizeString } from '../utils'
 
@@ -25,6 +27,14 @@ export const HeaderHome = ({ isFetching, userInfo, title, navigation }) => (
 export const HeaderContainer = connect(mapStateToProps, null)(HeaderHome);
 
 const stylesHome = StyleSheet.create({
+  backButton: {
+    paddingRight: 15,
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+  },
   container: {
     backgroundColor: '#1976D2',
     height: 50,
@@ -39,3 +49,12 @@ const stylesHome = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export const Header = ({ title, navigation }) => (
+  <View style={[stylesHome.container, stylesHome.buttonContainer]}>
+    <TouchableOpacity style={stylesHome.backButton} onPress={() => navigation.goBack()}>
+      <Icon name="chevron-left" size={25} color="#fff" />
+    </TouchableOpacity>
+    <Text style={stylesHome.title}>{title}</Text>  
+  </View>
+)
