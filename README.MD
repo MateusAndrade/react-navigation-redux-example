@@ -73,3 +73,7 @@ After starting your development server just run a ```react-native run-android```
 
 - Add action to edit user.
 - Write some JS Docs on redux and navigation actions.
+
+## Demo
+
+![](https://media.giphy.com/media/MTuYZEmBqwlBdljdi2/200w_d.gif)
