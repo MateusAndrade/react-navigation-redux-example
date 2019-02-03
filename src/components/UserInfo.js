@@ -49,7 +49,7 @@ class UserInfo extends Component {
     if (isFetching && !userInfo.picture) {
       return (
         <View style={styles.containerLoading}>
-          <ActivityIndicator />
+          <ActivityIndicator size="large" color="#1976D2" />
           <View style={styles.loadingTextContainer}>
             <Text>
               Loading...

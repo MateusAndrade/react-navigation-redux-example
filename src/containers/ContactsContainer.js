@@ -6,9 +6,9 @@ import { getContactsInfo } from '../actions';
 import Contacts from '../components/Contacts';
 
 const mapStateToProps = state => ({
-  contacts: state.user.contacts,
-  isFetching: state.user.isFetching,
-  error: state.user.error,
+  contacts: state.contacts.contacts,
+  isFetching: state.contacts.isFetching,
+  error: state.contacts.error,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
