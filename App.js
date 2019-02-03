@@ -10,8 +10,8 @@ const Root = () => (
   <Provider store={store}>
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar
-        barStyle="dark-content"
-        backgroundColor="#f6f5f5"
+        barStyle="light-content"
+        backgroundColor="#1565C0"
         translucent
       />
       <AppWithNavigationWrapper />

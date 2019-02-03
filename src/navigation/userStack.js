@@ -1,8 +1,11 @@
+import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 
 import routes from './routes';
 
 import UserContainer from '../containers/UserContainer';
+
+import { HeaderHome } from '../components/Header';
 
 const userContainer = {
   initialRouteName: routes.UserInfo,
@@ -13,6 +16,9 @@ add another screen to this stack just importing the desired container */
 const userStack = createStackNavigator({
   [routes.UserInfo]: {
     screen: UserContainer,
+    navigationOptions: ({ navigation }) => ({
+      header: <HeaderHome title="Welcome!" />,
+    }),
   },
 }, userContainer);
 
