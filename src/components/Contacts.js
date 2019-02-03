@@ -4,6 +4,14 @@ import { ActivityIndicator, FlatList, SectionList, StyleSheet, Text, View } from
 
 import Contact from './Contact';
 
+import routes from '../navigation/routes';
+
+/**
+ * You should avoid doing this, i prefer grouping all of my actions inside
+ * a actions folder. Separated by their category, like: navigation, request, etc.
+ */
+import NavigationService from '../navigation/navigationService';
+
 class Contacts extends Component {
   state = { }
 
@@ -13,7 +21,7 @@ class Contacts extends Component {
   }
 
   toContactDetail = contactInfo => {
-    console.log(contactInfo);
+    NavigationService.navigate(routes.ContactDetails, contactInfo)
   }
 
   render() {
