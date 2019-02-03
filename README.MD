@@ -71,6 +71,4 @@ After starting your development server just run a ```react-native run-android```
 
 ## TODO
 
-- Create basic store structure.
-- Create bottomNavigationStack.
-- Create UserScreen.
+- Add action to edit user.
