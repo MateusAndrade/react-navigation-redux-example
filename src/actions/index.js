@@ -5,6 +5,10 @@ import {
   GET_USER_REQUEST,
   GET_USER_REQUEST_SUCCESS,
   GET_USER_REQUEST_FAIL,
+  REQUEST_DELETE_CONTACT,
+  REQUEST_DELETE_CONTACT_SUCCESS,
+  REQUEST_DELETE_CONTACT_FAIL,
+  REQUEST_RESET_DELETE_CONTACT,
 } from '../config/types';
 
 import { fetchUser, fetchUsers } from '../api';
@@ -35,6 +39,20 @@ export const getContactsInfo = () => async (dispatch) => {
   }
 };
 
+export const deleteContact = contactToDelete => async (dispatch, getState) => {
+  dispatch(requestDeleteContact());
+
+  const { contacts } = getState();
+
+  try {
+    const newContactList = contacts.contacts.filter(contact => contact.email !== contactToDelete.email);
+  
+    dispatch(requestDeleteContactSuccess(newContactList));
+  } catch (error) {
+    dispatch(requestDeleteContactFail());
+  }
+};
+
 /* Contacts Dispatch */
 
 export const requestContactsInfo = () => ({
@@ -49,6 +67,23 @@ export const requestContactsInfoSuccess = contacts => ({
 export const requestContactsInfoFailed = error => ({
   type: GET_CONTACTS_REQUEST_FAIL,
   error,
+});
+
+export const resetDeleteContact = () => ({
+  type: REQUEST_RESET_DELETE_CONTACT,
+});
+
+export const requestDeleteContact = () => ({
+  type: REQUEST_DELETE_CONTACT,
+});
+
+export const requestDeleteContactSuccess = contacts => ({
+  type: REQUEST_DELETE_CONTACT_SUCCESS,
+  contacts,
+});
+
+export const requestDeleteContactFail = () => ({
+  type: REQUEST_DELETE_CONTACT_FAIL,
 });
 
 /* Contacts Dispatch */
