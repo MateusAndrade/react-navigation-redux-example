@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { ActivityIndicator, SectionList, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, FlatList, SectionList, StyleSheet, Text, View } from 'react-native';
 
 import Contact from './Contact';
 
@@ -10,6 +10,10 @@ class Contacts extends Component {
   componentDidMount() {
     const { getContactsInfo } = this.props;
     getContactsInfo();
+  }
+
+  toContactDetail = contactInfo => {
+    console.log(contactInfo);
   }
 
   render() {
@@ -30,10 +34,12 @@ class Contacts extends Component {
     };
 
     return (
-      <View style={styles.containerLoading}>
-        <Text>
-          Loading Contacts...
-        </Text>
+      <View style={styles.container}>
+        <FlatList
+          data={contacts}
+          keyExtractor={(item) => `k=${item.login.username}`}
+          renderItem={({ item }) => <Contact onSelect={this.toContactDetail} userInfo={item} />}
+        />
       </View>
     )
 
