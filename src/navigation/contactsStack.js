@@ -1,8 +1,12 @@
+import React from 'react';
+
 import { createStackNavigator } from 'react-navigation';
 
 import routes from './routes';
 
 import ContactsContainer from '../containers/ContactsContainer';
+
+import { HeaderContainer as HeaderHome } from '../components/Header';
 
 const contactsContainer = {
   initialRouteName: routes.Contacts,
@@ -13,6 +17,9 @@ add another screen to this stack just importing the desired container */
 const contactsStack = createStackNavigator({
   [routes.Contacts]: {
     screen: ContactsContainer,
+    navigationOptions: ({ navigation }) => ({
+      header: <HeaderHome navigation={navigation} title="Your contacts" />,
+    }),
   },
 }, contactsContainer);
 

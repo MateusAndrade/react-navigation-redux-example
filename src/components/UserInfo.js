@@ -71,15 +71,16 @@ class UserInfo extends Component {
 const styles = StyleSheet.create({
   avatarContainer: {
     alignItems: 'center',
+    backgroundColor: '#1976D2',
     borderBottomWidth: 1,
-    borderBottomColor: '#9e9e9e',
+    borderBottomColor: '#fff',
+    elevation: 1,
     marginBottom: 10,
     paddingBottom: 15,
+    paddingTop: 20,
   },
   container: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 20,
   },
   containerLoading: {
     alignItems: 'center',
@@ -99,7 +100,12 @@ const styles = StyleSheet.create({
     fontWeight :'bold',
     marginRight: 10,
   },
+  userInfoContainer: {
+    marginTop: 10,
+    paddingHorizontal: 30,
+  },
   userName: {
+    color: '#fff',
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 10,

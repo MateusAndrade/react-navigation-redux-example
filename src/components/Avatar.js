@@ -14,7 +14,6 @@ const Avatar = ({
     width, 
     height, 
     borderRadius: rounded ? ( width / 2 ) : 0,
-    elevation: 5,
   }}>
     <Image 
       source={source}

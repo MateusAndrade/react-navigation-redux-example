@@ -17,7 +17,7 @@ const userStack = createStackNavigator({
   [routes.UserInfo]: {
     screen: UserContainer,
     navigationOptions: ({ navigation }) => ({
-      header: <HeaderHome title="Welcome" />,
+      header: <HeaderHome navigation={navigation} title="Welcome" />,
     }),
   },
 }, userContainer);
