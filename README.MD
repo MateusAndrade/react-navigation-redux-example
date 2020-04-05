@@ -77,3 +77,5 @@ After starting your development server just run a ```react-native run-android```
 ## Demo
 
 ![](https://media.giphy.com/media/MTuYZEmBqwlBdljdi2/giphy.gif)
+
+Test
